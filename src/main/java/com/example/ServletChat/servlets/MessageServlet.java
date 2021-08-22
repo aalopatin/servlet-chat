@@ -27,7 +27,7 @@ public class MessageServlet extends HttpServlet {
 
         MessageRepository.saveMassage(new Message(datetime, name, textMsg));
 
-        response.sendRedirect("/");
+        response.sendRedirect(request.getContextPath() + "/");
 
     }
 }

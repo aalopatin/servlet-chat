@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
 
         session.setAttribute("name", request.getParameter("username"));
 
-        response.sendRedirect("/");
+        response.sendRedirect(request.getContextPath() + "/");
 
     }
 

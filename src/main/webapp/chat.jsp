@@ -7,7 +7,7 @@
 </head>
 <body>
     <H2>Chat as ${name}</H2>
-    <form action="/logout" method="POST">
+    <form action="${pageContext.request.contextPath}/logout" method="POST">
         <input type="submit" value="Exit" />
     </form>
 
@@ -18,7 +18,7 @@
     </ul>
 
     <c:if test="${!blockMessage.contains(name)}">
-        <form action="/message" method="POST">
+        <form action="${pageContext.request.contextPath}/message" method="POST">
             Message: <input name="message" />
             <input type="submit" value="Send" />
         </form>

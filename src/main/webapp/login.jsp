@@ -13,7 +13,7 @@
 <body>
 <body>
 <h1>Login</h1>
-<form action="/login" method="POST">
+<form action="${pageContext.request.contextPath}/login" method="POST">
     Name: <input name="username" />
     <br><br>
     <input type="submit" value="Login" />
