@@ -81,8 +81,8 @@
                     <generateGitPropertiesFilename>${project.build.outputDirectory}/info.properties</generateGitPropertiesFilename>
                     <includeOnlyProperties>
                         <includeOnlyProperty>${groupId}</includeOnlyProperty>
-<!--                        <includeOnlyProperty>^git.commit.id.full$</includeOnlyProperty>-->
-<!--                        <includeOnlyProperty>^git.commit.user.name$</includeOnlyProperty>-->
+                        <includeOnlyProperty>^git.commit.id.full$</includeOnlyProperty>
+                        <includeOnlyProperty>^git.commit.user.name$</includeOnlyProperty>
                     </includeOnlyProperties>
                     <commitIdGenerationMode>full</commitIdGenerationMode>
                 </configuration>
