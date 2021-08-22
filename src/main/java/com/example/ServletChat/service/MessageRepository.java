@@ -2,6 +2,7 @@ package com.example.ServletChat.service;
 
 import com.example.ServletChat.model.Message;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -61,22 +62,18 @@ public class MessageRepository {
     }
 
     private static Connection getConnection() throws SQLException, IOException {
-//        final String dir = System.getProperty("user.dir");
-//        System.out.println("current dir = " + dir);
-//        var props = new Properties();
-//        try (InputStream in = Files.newInputStream(Paths.get("application.properties"))) {
-//            props.load(in);
-//        }
-//        String drivers = props.getProperty("jdbc.drivers");
-//        if (drivers != null) {
-//            System.setProperty("jdbc.drivers", drivers);
-//        }
-//        String url = props.getProperty("jdbc.url");
-//        String username = props.getProperty("jdbc.username");
-//        String password = props.getProperty("jdbc.password");
-        System.setProperty("jdbc.drivers", "org.postgresql.Driver");
-        return DriverManager.getConnection("jdbc:postgresql:chat", "postgres", "postgres");
-//        return DriverManager.getConnection(url, username, password);
+        var props = new Properties();
+        try (InputStream in = Files.newInputStream(Paths.get("application.properties"))) {
+            props.load(in);
+        }
+        String drivers = props.getProperty("jdbc.drivers");
+        if (drivers != null) {
+            System.setProperty("jdbc.drivers", drivers);
+        }
+        String url = props.getProperty("jdbc.url");
+        String username = props.getProperty("jdbc.username");
+        String password = props.getProperty("jdbc.password");
+        return DriverManager.getConnection(url, username, password);
     }
 
 }
